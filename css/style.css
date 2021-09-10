@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+body{
+    background: url(../img/wallpaperbetter.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+.liquid{
+    background: #203e6146;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.liquid h1{
+    position: absolute; 
+    font-size: 18vw;   
+}
+.liquid h1:nth-child(1){
+    color: rgb(255, 255, 255);
+    text-shadow: -2px 2px 0px #636363,
+    -4px 4px 0px #636363,
+    -6px 6px 0px #636363,
+    -8px 8px 0px #636363,
+    -18px 18px 20px rgba(0,0,0,0.5),
+    -18px 18px 50px rgba(0,0,0,0.5);
+}
+.liquid h1:nth-child(2){
+    color: #969696;
+    animation: animate 3s ease-in-out infinite;
+}
+.liquid h1:nth-child(3){
+    color: #969696;
+    opacity: 0.5;
+    animation: animate 6s ease-in-out infinite;
+}
+.liquid h1:nth-child(4){
+    color: #969696;
+    animation: animate 4s ease-in-out infinite;
+}
+.cifrador{
+    justify-content: center;
+    text-align: center;
+    margin-top: 300px;
+    margin-bottom: 100px;
+}
+.cifra{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+.cifra h1{
+    font-size: 6vw;
+    position: absolute;
+    
+    margin-bottom: 10px;
+}
+.cifra h1:nth-child(1){
+    color: rgb(255, 255, 255);
+    text-shadow: -2px 2px 0px #203e61,
+    -4px 4px 0px #203e61,
+    -6px 6px 0px #203e61,
+    -8px 8px 0px #203e61,
+    -18px 18px 10px rgba(0,0,0,0.5),
+    -18px 18px 30px rgba(0,0,0,0.5);
+}
+.cifra h1:nth-child(2){
+    color: #5b81ac;
+    animation: animate 3s ease-in-out infinite;
+}
+.cifra h1:nth-child(3){
+    color: #5b81ac;
+    opacity: 0.5;
+    animation: animate 6s ease-in-out infinite;
+}
+.cifra h1:nth-child(4){
+    color: #5b81ac;
+    animation: animate 4s ease-in-out infinite;
+}
+.cifrador h3, p{
+    color: #ffffff;
+    padding: 10px;
+}
+.cifrador button{
+    padding: 10px;
+    width: 100px;
+    margin: 30px;
+}
+input{
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    border: 5px solid #594ae0;
+    background: #a288ff;
+    color: #ffffff;
+}
+#mensaje2{
+    margin-bottom: 100px;
+}
+input:hover{
+    animation: pulsoInput 1000ms 1;   
+}
+button{
+    border-radius: 20px;
+    background: rgb(25, 39, 85);
+    border: 2px rgb(25, 39, 85);
+    color: white;
+}
+button:hover{
+    background: rgb(56, 75, 139);
+    animation: pulso 1000ms;
+}
+
+@keyframes animate {
+    0%,100%{
+        clip-path: polygon(0 45%, 16% 46%, 30% 51%, 50% 67%, 70% 65%, 87% 58%, 100% 50%, 100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0 63%, 16% 66%, 35% 50%, 55% 41%, 71% 46%, 84% 52%, 100% 74%, 100% 100%, 0% 100%);
+    }
+}
+@keyframes pulso {
+    0%{
+        box-shadow: 0 0 0 0 rgba(56, 75, 139, 0.6)
+    }
+    100%{
+        box-shadow: 0 0 16px 24px rgba(57, 132, 182, 0);
+    }
+}
+@keyframes pulsoInput {
+    0%{
+        box-shadow: 0 0 0 0 rgba(97, 86, 192, 0.6);
+    }
+    100%{
+        box-shadow: 0 0 16px 24px rgba(57, 132, 182, 0);
+    }
+}
+@media (max-width: 400px) {
+    .cifra h1{
+        position: absolute; 
+        font-size: 20px;
+    }
+}

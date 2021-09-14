@@ -1,37 +1,41 @@
 window.addEventListener("load", inicio, true);
 
 function inicio(){
-    document.getElementById("mensaje").addEventListener("keyup", function(){
+    document.getElementById("frase").addEventListener("keyup", function(){
         this.value = this.value.toUpperCase();
     }, true);
-    document.getElementById("cifrar").addEventListener("click", function(){
-        let texto = document.getElementById("mensaje").value;
+    document.getElementById("encriptar").addEventListener("click", function(){
+        let texto = document.getElementById("frase").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
-        document.getElementById("mensaje2").value = cifrardo(texto, desplazamiento);
+        document.getElementById("descripcion").value = cifrado(texto, desplazamiento);
     }, true);
-    document.getElementById("descifrar").addEventListener("click", function(){
-        let texto = document.getElementById("mensaje").value;
+    document.getElementById("desencriptar").addEventListener("click", function(){
+        let texto = document.getElementById("frase").value;
         let desplazamiento = document.getElementById("desplazamiento").value;
-        document.getElementById("mensaje2").value=descifrar(texto, desplazamiento);
+        document.getElementById("descripcionDes").value=descifrar(texto, desplazamiento);
     }, true);
     document.getElementById("cifrarT").addEventListener("click", function(){
-        let textoT = document.getElementById("mensajeT").value;
+        let textoT = document.getElementById("fraseT").value;
         let clave = document.getElementById("clave").value;
-        document.getElementById("mensaje2T").value = cifrarT(textoT, clave);
+        document.getElementById("descripcionT").value = cifrarT(textoT, clave);
     }, true);
     document.getElementById("descifrarT").addEventListener("click", function(){
-        let textoT = document.getElementById("mensajeT").value;
+        let textoT = document.getElementById("fraseT").value;
         let clave = document.getElementById("clave").value;
-        document.getElementById("mensaje2T").value=descifrarT(textoT, clave);
+        document.getElementById("descripcionDesT").value=descifrarT(textoT, clave);
     }, true);
 }
 
-function cifrardo (texto, desplazamiento){
+function cifrado (texto, desplazamiento){
     if(!texto)
     return "";
     const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     desplazamiento = (desplazamiento % 26 + 26) % 26;
     return texto.replace(/[A-Z]/ig, c=> letras[(letras.indexOf(c)+desplazamiento)%26]);
+    const num = "123456789";
+    desplazamiento = (desplazamiento % 26 + 26) % 26;
+    return texto.replace(/[1-9]/, c=> letras[(num.indexOf(c)+desplazamiento)%26]);
+
 }
 
 function descifrar (texto, desplazamiento){
